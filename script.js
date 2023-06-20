@@ -1,17 +1,28 @@
 "use strict";
 
 const container = document.getElementById("container");
+const hoursOpen = [
+  "6am",
+  "7am",
+  "8am",
+  "9am",
+  "10am",
+  "11am",
+  "12pm",
+  "1pm",
+  "2pm",
+  "3pm",
+  "4pm",
+  "5pm",
+  "6pm",
+  "7pm",
+];
 
-function Store(
-  storeName,
-  minCustPerHour,
-  maxCustPerHour,
-  avgCookiesPerCust,
-  customerEachHour,
-  cookiesEachHour,
-  totalDailyCookies,
-  hoursOpen
-) {
+function randomNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function Store(storeName, minCustPerHour, maxCustPerHour, avgCookiesPerCust) {
   this.storeName = "seattle";
   this.minCustPerHour = 23;
   this.maxCustPerHour = 65;
@@ -19,27 +30,11 @@ function Store(
   this.customerEachHour = [];
   this.cookiesEachHour = [];
   this.totalDailyCookies = 0;
-  this.hoursOpen = [
-    "6am",
-    "7am",
-    "8am",
-    "9am",
-    "10am",
-    "11am",
-    "12pm",
-    "1pm",
-    "2pm",
-    "3pm",
-    "4pm",
-    "5pm",
-    "6pm",
-    "7pm",
-  ];
   this.render();
 }
 
 Store.prototype.generateCustEachHour = function () {
-  for (let i = 0; i < this.hoursOpen.length; i++) {
+  for (let i = 0; i < hoursOpen.length; i++) {
     this.customerEachHour.push(
       randomNum(this.minCustPerHour, this.maxCustPerHour)
     );
@@ -47,25 +42,17 @@ Store.prototype.generateCustEachHour = function () {
 };
 
 Store.prototype.generateCookiesPerHour = function () {
-  for (let i = 0; i < this.hoursOpen.length; i++) {
-    let oneHour = Math.ceil(
-      this.cookiesEachHour.push(
-        this.customerEachHour[i] * this.avgCookiesPerCust
-      )
-    );
+  for (let i = 0; i < hoursOpen.length; i++) {
+    let oneHour = Math.ceil(this.customerEachHour[i] * this.avgCookiesPerCust);
     this.cookiesEachHour.push(oneHour);
     this.totalDailyCookies += oneHour;
   }
 };
 
-const seattle = new Store("seattle");
-console.log(seattle);
-
-function randomNum(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
 Store.prototype.render = function () {
+  this.generateCustEachHour();
+  this.generateCookiesPerHour();
+
   const container = document.getElementById("store");
 
   const article = document.createElement("article");
@@ -109,3 +96,6 @@ Store.prototype.render = function () {
     p.textContent = `${this.storeName} sold a total of ${this.totalDailyCookies}`;
   }
 };
+
+const seattle = new Store("seattle");
+console.log(seattle);
