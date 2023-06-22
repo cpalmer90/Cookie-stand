@@ -4,14 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Sales</title>
   </head>
 
   <body>
     <header>
       <h1>Sales</h1>
     </header>
-    <main></main>
+    <main>
+      <form id="addOrderForm">
+        <fieldset>
+          <legend>Order Form.</legend>
+          <label for="locationInput">Enter store location</label>
+          <input type="text" id="locationInput" placeholder="Location" />
+        </fieldset>
+        <fieldset>
+          <legend>Customer footfall</legend>
+          <label for="minCustomers">Min amount of customers</label>
+          <input type="text" id="minCustomers" placeholder="Min customers" />
+
+          <label for="maxCustomers">Max amount of customers</label>
+          <input type="text" id="maxCustomers" placeholder="Max customers" />
+
+          <label for="averageCookie">Average cookies per customer</label>
+          <input
+            type="text"
+            id="averageCookie"
+            plaveholder="Cookies per Cust"
+          />
+        </fieldset>
+
+        <button type="submit">Submit Order</button>
+      </form>
+      <div id="container">
+        <section id="store-table"></section>
+      </div>
+    </main>
     <footer></footer>
     <script src="script.js"></script>
   </body>

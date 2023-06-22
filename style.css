@@ -38,3 +38,20 @@ div {
   display: flex;
   justify-content: left;
 }
+
+table,
+th,
+td {
+  border: 1px solid salmon;
+  border-collapse: collapse;
+  justify-content: center;
+}
+
+table {
+  margin-bottom: 1rem;
+}
+
+th,
+td {
+  padding: 0.5rem;
+}
