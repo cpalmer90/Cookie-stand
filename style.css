@@ -4,32 +4,80 @@ html {
 
 * {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   box-sizing: border-box;
+}
+
+.bg {
+  background-color: black;
+  opacity: 80%;
+}
+
+@font-face {
+  font-family: TrainOne-Regular;
+  src: url("Train_One/TrainOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: benguiatstdbold;
+  src: url("benguiatstdbold/BenguiatStd-Book.otf");
 }
 
 body {
   color: white;
-  background-color: black;
-  font-family: monospace;
+  font-family: benguiatstdbold;
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: 0.01em;
+  background-image: url("images/blackbgsalmon.jpg");
+  margin: 0 auto;
 }
 
-div {
+header {
+  font-family: TrainOne-Regular;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: salmon;
+  text-align: center;
+}
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px salmon, 0 0 60px salmon, 0 0 70px salmon, 0 0 80px salmon;
+  }
+}
+
+.boxes {
   border-radius: 12px;
   border-color: salmon;
   border-style: groove;
-  text-align: center;
   align-items: center;
+  max-width: 70%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  word-break: keep-all;
+  inline-size: auto;
 }
 
 #headerimg {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
+  width: 300px;
+  height: 300px;
 }
 
 #image1 {
@@ -45,6 +93,7 @@ td {
   border: 1px solid salmon;
   border-collapse: collapse;
   justify-content: center;
+  width: 300px;
 }
 
 table {
@@ -54,4 +103,103 @@ table {
 th,
 td {
   padding: 0.5rem;
+}
+
+td {
+  width: 20px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: salmon;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+footer {
+  margin-top: 2rem;
+}
+
+/* div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {width: 100%}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+} */
+
+.butt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+input[type="text"] {
+  border: 2px solid salmon;
+  border-radius: 4px;
+}
+
+p {
+  text-align: center;
+}
+
+.buttcorner {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  flex-direction: row;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }

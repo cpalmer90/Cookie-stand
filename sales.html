@@ -9,35 +9,63 @@
 
   <body>
     <header>
-      <h1>Sales</h1>
+      <div class="buttcorner">
+        <button
+          class="button"
+          onclick="location.href='about.html'"
+          type="button"
+        >
+          <span>Previous Page</span>
+        </button>
+      </div>
+      <h1 class="glow">Orders</h1>
     </header>
     <main>
-      <form id="addOrderForm">
-        <fieldset>
-          <legend>Order Form.</legend>
-          <label for="locationInput">Enter store location</label>
-          <input type="text" id="locationInput" placeholder="Location" />
-        </fieldset>
-        <fieldset>
-          <legend>Customer footfall</legend>
-          <label for="minCustomers">Min amount of customers</label>
-          <input type="text" id="minCustomers" placeholder="Min customers" />
+      <div class="boxes">
+        <form id="addOrderForm">
+          <fieldset>
+            <legend class="bg">Order Form.</legend>
+            <label for="locationInput">Enter store location</label>
+            <input type="text" id="locationInput" placeholder="Location" />
+          </fieldset>
+          <fieldset class="bg">
+            <legend class="bg">Customer footfall</legend>
 
-          <label for="maxCustomers">Max amount of customers</label>
-          <input type="text" id="maxCustomers" placeholder="Max customers" />
+            <label for="minCustomers">Min amount of customers </label>
+            <input
+              type="text"
+              id="minCustomers"
+              placeholder="Min customers"
+            /><br />
 
-          <label for="averageCookie">Average cookies per customer</label>
-          <input
-            type="text"
-            id="averageCookie"
-            plaveholder="Cookies per Cust"
-          />
-        </fieldset>
+            <label for="maxCustomers" class="bg"
+              >Max amount of customers
+            </label>
+            <input
+              type="text"
+              id="maxCustomers"
+              placeholder="Max customers"
+            /><br />
 
-        <button type="submit">Submit Order</button>
-      </form>
-      <div id="container">
-        <section id="store-table"></section>
+            <label for="averageCookie">Average cookies per customer</label>
+            <input
+              type="text"
+              id="averageCookie"
+              placeholder="Cookies per Cust"
+            /><br />
+          </fieldset>
+          <div class="butt">
+            <button class="button" type="submit">
+              <span>Submit Order</span>
+            </button>
+          </div>
+        </form>
+        <div>
+          <img id="image1" src="images/salmoncookie.png" alt="salmoncookies" />
+        </div>
+      </div>
+      <div class="boxes" id="container" class="bg">
+        <section id="store-table" class="bg"></section>
       </div>
     </main>
     <footer></footer>
