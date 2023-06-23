@@ -31,6 +31,7 @@ body {
   letter-spacing: 0.01em;
   background-image: url("images/blackbgsalmon.jpg");
   margin: 0 auto;
+  text-align: center;
 }
 
 header {
@@ -160,19 +161,6 @@ footer {
   margin-top: 2rem;
 }
 
-/* div.polaroid {
-  width: 80%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-img {width: 100%}
-
-div.container {
-  text-align: center;
-  padding: 10px 20px;
-} */
-
 .butt {
   display: flex;
   justify-content: center;
@@ -183,10 +171,6 @@ div.container {
 input[type="text"] {
   border: 2px solid salmon;
   border-radius: 4px;
-}
-
-p {
-  text-align: center;
 }
 
 .buttcorner {
@@ -202,4 +186,17 @@ p {
   flex-direction: column;
   align-content: center;
   align-items: center;
+}
+
+img {
+  width: 80%;
+  height: 80%;
+}
+
+.fleximg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  flex-direction: column;
 }
